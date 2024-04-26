@@ -1,3 +1,4 @@
+//c++ template gennerate gold price by line
 #include <iostream>
 #include <string>
 #include <unistd.h>
