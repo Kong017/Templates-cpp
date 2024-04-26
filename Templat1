@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+#include <unistd.h>
+#define MAXVALUE 2000
+#define DECIMAL 0.01
+using namespace std;
+class keep{
+ public:
+  double randomPrice;
+  
+  string name;
+  void keepData(string str){
+      name =str;
+  }
+  void printData(){
+      randomPoint();
+      cout << randomPrice << "\tKeepData=" << name << "\n";
+  }
+ double randomPoint(){
+   int ranPoint;
+   double doubleReturn;
+   ranPoint = rand();
+   doubleReturn = ranPoint % MAXVALUE;
+   doubleReturn = doubleReturn * DECIMAL;
+   randomPrice = MAXVALUE + doubleReturn ;
+   doubleReturn = randomPrice;
+  return(doubleReturn);
+}
+};
+int main()
+{
+    keep k1[5];
+    int microseconds=100000;
+k1[0].keepData("test0 job");     k1[1].keepData("test1 job");     k1[2].keepData("test2 job");     k1[3].keepData("test3 job");     k1[4].keepData("test4 job");
+  while(1){    
+    k1[0].printData();
+    k1[1].printData();
+    k1[2].printData();
+    k1[3].printData();
+    k1[4].printData();
+        usleep(microseconds);
+  }
+    return 0;
+}
